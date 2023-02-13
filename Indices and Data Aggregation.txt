@@ -10,3 +10,10 @@ max(w.MagicWandSize) as LongestMagicWand
 from WizzardDeposits as w
 group by w.DepositGroup
 
+select 
+top 2
+w.DepositGroup
+from WizzardDeposits as w
+group by w.DepositGroup
+order by avg(MagicWandSize)
+
