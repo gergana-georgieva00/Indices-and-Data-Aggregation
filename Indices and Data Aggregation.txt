@@ -17,3 +17,9 @@ from WizzardDeposits as w
 group by w.DepositGroup
 order by avg(MagicWandSize)
 
+select 
+w.DepositGroup,
+sum(w.DepositAmount)
+from WizzardDeposits as w
+group by w.DepositGroup
+
