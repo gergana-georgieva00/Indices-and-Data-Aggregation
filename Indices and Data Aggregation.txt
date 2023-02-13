@@ -130,3 +130,14 @@ as [Count]
 from Employees
 where ManagerID is null
 
+select DepartmentID,
+max(Salary) as ThirdHighestSalary
+from
+(
+	select DepartmentID, Salary,
+	dense_rank() over (partition by DepartmentID order by Salary desc) as [Rank]
+	from Employees
+) as t
+where [Rank] = 3
+group by DepartmentID
+
