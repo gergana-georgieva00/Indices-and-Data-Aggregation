@@ -83,9 +83,9 @@ group by DepositGroup, IsDepositExpired
 order by DepositGroup desc,
 		 IsDepositExpired asc
 		 
-SELECT
-	SUM(w1.[DepositAmount] - w2.[DepositAmount]) AS [SumDifference]
-FROM [WizzardDeposits] AS [w1]
-LEFT JOIN [WizzardDeposits] AS [w2]
-	ON w1.[Id] = w2.[Id] - 1
+select
+	sum(w1.[DepositAmount] - w2.[DepositAmount]) as [SumDifference]
+from [WizzardDeposits] as [w1]
+left join [WizzardDeposits] as [w2]
+	on w1.[Id] = w2.[Id] - 1
 	
