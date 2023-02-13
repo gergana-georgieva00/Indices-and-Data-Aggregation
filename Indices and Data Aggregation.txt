@@ -39,3 +39,12 @@ group by w.DepositGroup
 having sum(w.DepositAmount) < 150000
 order by TotalSum desc
 
+select 
+w.DepositGroup,
+w.MagicWandCreator,
+min(w.DepositCharge) as MinDepositCharge
+from WizzardDeposits as w
+group by w.DepositGroup, w.MagicWandCreator
+order by MagicWandCreator,
+		 DepositGroup
+		 
