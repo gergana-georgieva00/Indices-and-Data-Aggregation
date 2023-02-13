@@ -124,3 +124,9 @@ from Employees
 group by DepartmentID
 having max(Salary) not between 30000 and 70000
 
+select 
+count(EmployeeID)
+as [Count]
+from Employees
+where ManagerID is null
+
