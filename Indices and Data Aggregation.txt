@@ -89,3 +89,10 @@ from [WizzardDeposits] as [w1]
 left join [WizzardDeposits] as [w2]
 	on w1.[Id] = w2.[Id] - 1
 	
+use SoftUni
+select 
+DepartmentID,
+sum(Salary) as TotalSalary
+from Employees 
+group by DepartmentID
+
