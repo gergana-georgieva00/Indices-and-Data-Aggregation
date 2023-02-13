@@ -30,3 +30,12 @@ from WizzardDeposits as w
 where w.MagicWandCreator = 'Ollivander family'
 group by w.DepositGroup
 
+select 
+w.DepositGroup,
+sum(w.DepositAmount) as TotalSum
+from WizzardDeposits as w
+where w.MagicWandCreator = 'Ollivander family'
+group by w.DepositGroup
+having sum(w.DepositAmount) < 150000
+order by TotalSum desc
+
