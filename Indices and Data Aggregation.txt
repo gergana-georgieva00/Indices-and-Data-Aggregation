@@ -1,0 +1,3 @@
+select count(w.Id) as [Count]
+from WizzardDeposits as w
+
