@@ -1,3 +1,6 @@
 select count(w.Id) as [Count]
 from WizzardDeposits as w
 
+select max(MagicWandSize) as LongestMagicWand
+from WizzardDeposits
+
