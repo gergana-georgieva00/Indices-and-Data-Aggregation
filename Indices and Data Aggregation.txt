@@ -66,3 +66,11 @@ from
 ) as a
 group by AgeGroup
 
+select distinct FirstLetter
+from 
+(
+	select substring(FirstName, 1, 1) as FirstLetter
+	from WizzardDeposits
+	where DepositGroup = 'Troll Chest'
+) as letters
+
