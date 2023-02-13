@@ -4,3 +4,9 @@ from WizzardDeposits as w
 select max(MagicWandSize) as LongestMagicWand
 from WizzardDeposits
 
+select 
+w.DepositGroup,
+max(w.MagicWandSize) as LongestMagicWand
+from WizzardDeposits as w
+group by w.DepositGroup
+
