@@ -103,3 +103,18 @@ where DepartmentID in (2, 5, 7)
 	  and HireDate > '01-01-2000'
 group by DepartmentID
 
+select * into NewTable from Employees
+where Salary > 30000
+
+delete from NewTable
+where ManagerID = 42
+
+update NewTable 
+set Salary += 5000
+where DepartmentID = 1
+
+select DepartmentID,
+avg(Salary) as AverageSalary
+from NewTable
+group by DepartmentID
+
